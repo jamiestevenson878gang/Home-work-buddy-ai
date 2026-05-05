@@ -1,0 +1,16 @@
+{"url":"https://github.com/jamiestevenson878gang/Home-work-buddy-ai"}# Exported from Render on 2026-05-05T02:39:06Z
+version: "1"
+projects:
+- name: Homework-buddy-ai
+  environments:
+  - name: Deploy
+    services:
+    - type: web
+      name: Home-work-buddy-ai-1
+      runtime: python
+      repo: https://github.com/jamiestevenson878gang/Home-work-buddy-ai
+      plan: starter
+      region: frankfurt
+      buildCommand: pip install -r requirements.txt
+      startCommand: gunicorn app:app
+      autoDeployTrigger: commit
